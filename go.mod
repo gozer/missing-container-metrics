@@ -6,7 +6,7 @@ require (
 	github.com/containerd/containerd v1.7.3
 	github.com/containerd/typeurl v1.0.2
 	github.com/containerd/typeurl/v2 v2.1.1
-	github.com/docker/docker v23.0.3+incompatible
+	github.com/docker/docker v24.0.5+incompatible
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/gogo/googleapis v1.4.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
