@@ -7,6 +7,8 @@ on:
       - 'main'
       - 'maintainer'
   push:
+    tags:
+      - "*"
     branches:
       - 'main'
       - 'maintainer'
@@ -33,6 +35,6 @@ jobs:
         name: Build
         uses: docker/build-push-action@v4
         with:
-          push: false
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
