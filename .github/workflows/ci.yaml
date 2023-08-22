@@ -34,6 +34,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: false
+        load: true
         tags: |
           ${{ steps.meta.outputs.tags }}
           ${{ github.repository }}:trivy
