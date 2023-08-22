@@ -76,7 +76,6 @@ func (eh *eventHandler) hasContainer(id string) (*container, bool) {
 }
 
 func (eh *eventHandler) addContainer(id, name, imageID string) *container {
-
 	cnt, ex := eh.hasContainer(id)
 	if ex {
 		return cnt
@@ -96,7 +95,6 @@ func (eh *eventHandler) addContainer(id, name, imageID string) *container {
 	eh.containers[id] = c
 
 	return c
-
 }
 
 func (eh *eventHandler) handle(e events.Message) error {

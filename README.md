@@ -3,15 +3,14 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/dmilhdef/missing-container-metrics.svg?maxAge=604800)][hub]
 [![Docker Image Version](https://img.shields.io/docker/v/dmilhdef/missing-container-metrics?sort=semver)][hub]
 
-
 **STATUS: stable, maintained**
 
 cadvisor is great, but missing a few important metrics, that every serious devops person wants to know about.
 This is a secondary process to export all the missing [Prometheus](https://prometheus.io) metrics:
 
-* OOM-kill
-* number of container restarts
-* last exit code
+- OOM-kill
+- number of container restarts
+- last exit code
 
 This was motivated by hunting down a OOM kills in a large Kubernetes cluster.
 It's possible for containers to keep running, even after a OOM-kill, if a
@@ -25,8 +24,9 @@ not being forwarded because the Fluentd worker process kept being OOM-kill and
 then restarted by the main process. A fix was then deployed 10 minutes later.
 
 ## Supported Container Runtimes
-* Docker
-* Containerd
+
+- Docker
+- Containerd
 
 Kubernetes 1.20 has deprecated Docker container runtime, so we have added support for Containerd since the version `0.21.0` of `missing-container-metrics`.
 Both options should cover most of common use cases (EKS, GKE, K3S, Digital Ocean Kubernetes, ...).
@@ -36,7 +36,6 @@ Both options should cover most of common use cases (EKS, GKE, K3S, Digital Ocean
 ### Kubernetes
 
 The easiest way of installing `missing-container-metrics` in your kubernetes cluster is using our [helm chart](https://artifacthub.io/packages/helm/missing-container-metrics/missing-container-metrics).
-
 
 ### Docker
 
@@ -48,13 +47,14 @@ $ docker run -d -p 3001:3001 -v /var/run/docker.sock:/var/run/docker.sock dmilhd
 
 Exposes metrics about Docker/Containerd containers.
 Every metric contains following labels:
+
 ## Exposed Metrics
 
 Each of those metrics, are published with the labels from the next section.
 
 ### `container_restarts` (counter)
 
-Number of restarts of the container. 
+Number of restarts of the container.
 
 ### `container_ooms` (counter)
 
@@ -99,7 +99,6 @@ will be set as the `namespace` label of the metric.
 Together with `pod`, this label is useful in the context of Kubernetes deployments, to determine namespace/pod to which the container is part of.
 One can see it as a shortcut to joining with the `kube_pod_container_info` metric to determine those values.
 
-
 ## Contributing
 
 Contributions are welcome, send your issues and PRs to this repo.
@@ -107,6 +106,5 @@ Contributions are welcome, send your issues and PRs to this repo.
 ## License
 
 [MIT](LICENSE) - Copyright Dragan Milic and contributors
-
 
 [hub]: https://hub.docker.com/r/dmilhdef/missing-container-metrics/

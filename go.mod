@@ -11,3 +11,5 @@ require (
 	github.com/urfave/cli/v2 v2.25.7
 	go.uber.org/zap v1.25.0
 )
+
+replace github.com/draganm/missing-container-metrics => ./

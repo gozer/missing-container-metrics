@@ -1,3 +1,4 @@
+---
 apiVersion: v2
 name: missing-container-metrics
 description: A Helm chart for installing missing-container-metrics exporter
@@ -21,4 +22,4 @@ version: 0.1.1
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "0.21.0"
+appVersion: 0.21.0

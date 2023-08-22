@@ -1,0 +1,14 @@
+---
+linters:
+  presets:
+  - bugs
+  - comment
+  - error
+  - format
+  - import
+  - metalinter
+  - performance
+  - sql
+  - unused
+  disable:
+  - gci

@@ -97,7 +97,6 @@ func (eh *eventHandler) hasContainer(id string) (*container, bool) {
 }
 
 func (eh *eventHandler) getOrCreateContainer(id string) *container {
-
 	cnt, ex := eh.hasContainer(id)
 	if ex {
 		return cnt
@@ -121,7 +120,6 @@ func (eh *eventHandler) getOrCreateContainer(id string) *container {
 	eh.containers[id] = c
 
 	return c
-
 }
 
 func (eh *eventHandler) handle(e interface{}) error {
@@ -149,7 +147,6 @@ func (eh *eventHandler) handle(e interface{}) error {
 				c.destroy()
 				delete(eh.containers, id)
 			}()
-
 		}
 	case *events.TaskExit:
 		id := ev.ContainerID

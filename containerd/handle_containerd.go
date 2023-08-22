@@ -63,5 +63,4 @@ func HandleContainerd(ctx context.Context, slogger *zap.SugaredLogger) error {
 			}
 		}
 	}
-
 }

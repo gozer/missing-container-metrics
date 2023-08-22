@@ -89,10 +89,8 @@ func main() {
 
 			slogger.Infof("Listening on %s", a)
 			return server.ListenAndServe()
-
 		},
 	}
 
 	a.RunAndExitOnError()
-
 }

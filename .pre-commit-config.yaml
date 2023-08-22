@@ -1,0 +1,83 @@
+---
+repos:
+- repo: meta
+  hooks:
+  - id: check-hooks-apply
+  - id: check-useless-excludes
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+  - id: mixed-line-ending
+  - id: check-byte-order-marker
+  - id: check-merge-conflict
+- repo: https://github.com/Lucas-C/pre-commit-hooks
+  rev: v1.5.4
+  hooks:
+  - id: forbid-crlf
+  - id: remove-crlf
+  - id: forbid-tabs
+    exclude: ((^|/)Makefile$|\.go$|go.mod$)
+  - id: remove-tabs
+    exclude: ((^|/)Makefile$|\.go$|go.mod$)
+- repo: https://github.com/zricethezav/gitleaks
+  rev: v8.17.0
+  hooks:
+  - id: gitleaks
+- repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+  rev: 0.2.3
+  hooks:
+  - id: yamlfmt
+    args:
+    - --mapping
+    - '2'
+    - --sequence
+    - '2'
+    - --offset
+    - '0'
+    - --width
+    - '150'
+
+    exclude: ^docs/missing-container-metrics/templates/.*\.yaml
+- repo: https://github.com/adrienverge/yamllint
+  rev: v1.32.0
+  hooks:
+  - id: yamllint
+    exclude: ^docs/missing-container-metrics/templates/.*\.yaml
+    args:
+    - --format
+    - parsable
+    - --strict
+- repo: https://github.com/dnephin/pre-commit-golang
+  rev: v0.5.1
+  hooks:
+  - id: go-cyclo
+    args:
+    - -over=100
+- repo: https://github.com/tekwizely/pre-commit-golang
+  rev: v1.0.0-rc.1
+  hooks:
+  - id: go-build-mod
+  - id: go-mod-tidy
+  - id: go-imports
+  - id: golangci-lint-mod
+  - id: go-test-mod
+  - id: go-fumpt
+  - id: go-sec-mod
+  - id: go-staticcheck-mod
+  - id: go-vet-mod
+  - id: go-structslop-mod
+- repo: https://github.com/Agilicus/pre-commit-hook-k8svalidate.git
+  rev: v0.1.0
+  hooks:
+  - id: k8svalidate
+    exclude: ^docs/missing-container-metrics/templates/.*\.yaml
+- repo: https://github.com/gruntwork-io/pre-commit
+  rev: v0.1.22
+  hooks:
+  - id: helmlint
+- repo: https://github.com/shellcheck-py/shellcheck-py
+  rev: v0.9.0.5
+  hooks:
+  - id: shellcheck

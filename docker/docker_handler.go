@@ -21,7 +21,6 @@ func HandleDocker(ctx context.Context, slogger *zap.SugaredLogger) error {
 	containers, err := dc.ContainerList(ctx, types.ContainerListOptions{
 		All: true,
 	})
-
 	if err != nil {
 		return errors.Wrap(err, "while listing containers")
 	}
@@ -61,5 +60,4 @@ func HandleDocker(ctx context.Context, slogger *zap.SugaredLogger) error {
 			return errors.Wrap(err, "while reading events")
 		}
 	}
-
 }

@@ -1,3 +1,4 @@
+---
 # Default values for missing-container-metrics.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
@@ -6,16 +7,16 @@ image:
   repository: dmilhdef/missing-container-metrics
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v0.21.0@sha256:fada1a6e76380a8ebb324664ae5017eaaf290d4cdd8188960a9052bafb78fbef"
+  tag: v0.21.0@sha256:fada1a6e76380a8ebb324664ae5017eaaf290d4cdd8188960a9052bafb78fbef
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: ''
+fullnameOverride: ''
 
 
 podAnnotations:
-  prometheus.io/scrape: "true"
-  prometheus.io/port: "3001"
+  prometheus.io/scrape: 'true'
+  prometheus.io/port: '3001'
 
 
 podSecurityContext: {}
