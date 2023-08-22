@@ -34,7 +34,9 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: false
-        tags: ${{ steps.meta.outputs.tags }},${{ github.repository }}:trivy
+        tags: |
+          ${{ steps.meta.outputs.tags }}
+          ${{ github.repository }}:trivy
         labels: ${{ steps.meta.outputs.labels }}
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
