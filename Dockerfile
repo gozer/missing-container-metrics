@@ -1,4 +1,4 @@
-FROM golang:1.21-alpine3.18@sha256:445f34008a77b0b98bf1821bf7ef5e37bb63cc42d22ee7c21cc17041070d134f as build
+FROM golang:1.21-alpine3.18@sha256:d390d5f2006c4c9cf19709d449a8463e7188643f444d06fcaa96f45b6c29363d as build
 
 RUN mkdir /missing-container-metrics
 WORKDIR /missing-container-metrics
