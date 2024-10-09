@@ -1,10 +1,12 @@
 module github.com/draganm/missing-container-metrics
 
-go 1.20
+go 1.21
+
+toolchain go1.23.2
 
 require (
 	github.com/containerd/containerd v1.7.3
-	github.com/containerd/typeurl/v2 v2.1.1
+	github.com/containerd/typeurl/v2 v2.2.0
 	github.com/docker/docker v24.0.5+incompatible
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.16.0
